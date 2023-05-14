@@ -14,9 +14,31 @@ public class TapShowup : MonoBehaviour
     /*
      * コライダーがアクティブ化出来てないからそれを直す
      */
-
+   
     void Update()
     {
+        if (CameraManager.Instance != null && OpenPositionName == CameraManager.Instance.CurrentPositionName)
+        {
+            colliderToTap.gameObject.SetActive(true);
+        }
+        else if (CameraManager1.Instance != null && OpenPositionName == CameraManager1.Instance.CurrentPositionName)
+        {
+            colliderToTap.gameObject.SetActive(true);
+        }
+        else if (CameraManager2.Instance != null && OpenPositionName == CameraManager2.Instance.CurrentPositionName)
+        {
+            colliderToTap.gameObject.SetActive(true);
+        }
+        else if (CameraManager3.Instance != null && OpenPositionName == CameraManager3.Instance.CurrentPositionName)
+        {
+            colliderToTap.gameObject.SetActive(true);
+        }
+        else
+        {
+            colliderToTap.gameObject.SetActive(false);
+        }
+
+
         if (Input.GetMouseButtonDown(0)) // 左クリックされた場合
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // カメラからマウス座標へレイを飛ばす
@@ -30,17 +52,17 @@ public class TapShowup : MonoBehaviour
                 }
             }
         }
-        
+
     }
+
 
     public void DeactivateCanvas()
     {
         uiCanvas.SetActive(false);
         canvasActive = false;
     }
-
-    
-    private void CameraMovement()
+    /*
+     private void CameraMovement()
     {
         if (CameraManager.Instance != null || CameraManager1.Instance != null || CameraManager2.Instance != null || CameraManager3.Instance != null) // どちらかが null でないことを確認
         {
@@ -62,5 +84,6 @@ public class TapShowup : MonoBehaviour
             }
             colliderToTap.gameObject.SetActive(true);
         }
-    }
+    }*/
+
 }

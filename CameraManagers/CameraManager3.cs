@@ -124,23 +124,11 @@ public class CameraManager3 : MonoBehaviour
             }
         },
         {
-            "Crate",
-            new CameraPositionInfo
-            {
-                Position3 = new Vector3(-23, 3, -33),
-                Rotate3 = new Vector3(60, 180, 0),
-                MoveNames3 = new MoveNames
-                {
-                    Back3 = "Front3",
-                }
-            }
-        },
-        {
             "Desktop",
             new CameraPositionInfo
             {
                 Position3 = new Vector3(-22, 2, -24),
-                Rotate3 = new Vector3(15, 180, 0),
+                Rotate3 = new Vector3(10, 180, 0),
                 MoveNames3 = new MoveNames
                 {
                     Left3 = "RoomLeft3",
@@ -154,8 +142,8 @@ public class CameraManager3 : MonoBehaviour
             "Display",
             new CameraPositionInfo
             {
-                Position3 = new Vector3(-22, 2, -25),
-                Rotate3 = new Vector3(15, 180, 0),
+                Position3 = new Vector3(-22, 2, -26),
+                Rotate3 = new Vector3(25, 180, 0),
                 MoveNames3 = new MoveNames
                 {
                     Back3 = "Desktop",
@@ -171,6 +159,30 @@ public class CameraManager3 : MonoBehaviour
                 MoveNames3 = new MoveNames
                 {
                     Back3 = "Desktop",
+                }
+            }
+        },
+        {
+            "Box3",
+            new CameraPositionInfo
+            {
+                Position3 = new Vector3(-23, 1, -32),
+                Rotate3 = new Vector3(10, 180, 0),
+                MoveNames3 = new MoveNames
+                {
+                    Back3 = "Front3",
+                }
+            }
+        },
+        {
+            "BoxOpen3",
+            new CameraPositionInfo
+            {
+                Position3 = new Vector3(-23, 1, -32),
+                Rotate3 = new Vector3(10, 180, 0),
+                MoveNames3 = new MoveNames
+                {
+                    Back3 = "Box3",
                 }
             }
         },

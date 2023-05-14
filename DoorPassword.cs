@@ -2,37 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenJudge : MonoBehaviour
+public class DoorPassword : MonoBehaviour
 {
-    private bool _IsOpen = false;
-
+    private bool _IsOpen1 = false;
     public TapObjectChange[] TapChanges;
     public int[] AnswerIndexes;
     public string OpenPositionName;
     public GameObject OpenCollider;
-   
+    public GameObject[] ObjectsToActivate; 
+    public GameObject PasswordUI;
+
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        if (_IsOpen) return;
+        if (_IsOpen1) return;
 
-        for(int i = 0; i < TapChanges.Length; i++) 
+        for (int i = 0; i < TapChanges.Length; i++)
         {
             if (TapChanges[i].Index != AnswerIndexes[i])
                 return;
         }
         //here is collect answer
-        _IsOpen= true;
-        foreach(var TapChange in TapChanges) 
+        _IsOpen1 = true;
+        foreach (var TapChange in TapChanges)
         {
             TapChange.enabled = false;
             TapChange.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
 
+        // ’Ç‰Á
+        foreach (GameObject obj in ObjectsToActivate)
+        {
+            obj.SetActive(true);
+        }
+        gameObject.SetActive(false);
+        PasswordUI.SetActive(false);
         Invoke(nameof(CameraMovement), 0.5f);
     }
 
@@ -59,4 +67,5 @@ public class OpenJudge : MonoBehaviour
             OpenCollider.SetActive(true);
         }
     }
+
 }

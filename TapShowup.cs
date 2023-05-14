@@ -7,9 +7,13 @@ public class TapShowup : MonoBehaviour
 {
     public GameObject uiCanvas; // アクティブにするUI Canvas
     public Collider colliderToTap; // タップするコライダー
+    public string OpenPositionName;
 
-    private float lastTapTime; // 前回タップした時間
-    private float tapDelay = 0.2f; // タップとして認識する時間間隔
+    private bool canvasActive = false; // Canvasがアクティブ状態かどうか
+
+    /*
+     * コライダーがアクティブ化出来てないからそれを直す
+     */
 
     void Update()
     {
@@ -19,25 +23,44 @@ public class TapShowup : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit)) // レイが何かに当たった場合
             {
-                if (hit.collider == colliderToTap) // 指定したコライダーをタップした場合
+                if (hit.collider == colliderToTap) // 指定したコライダーまたは新しく設定したコライダーをタップした場合
                 {
-                    if (Time.time - lastTapTime < tapDelay) // 前回タップしてからの時間が一定以下であれば
-                    {
-                        if (uiCanvas.activeSelf == true) // UIがアクティブ状態の場合
-                        {
-                            uiCanvas.SetActive(false); // UIを非アクティブにする
-                        }
-                    }
-                    else
-                    {
-                        if (uiCanvas.activeSelf == false) // UIが非アクティブ状態の場合
-                        {
-                            uiCanvas.SetActive(true); // UIをアクティブにする
-                        }
-                    }
-                    lastTapTime = Time.time; // 前回タップした時間を更新する
+                    canvasActive = !canvasActive; // Canvasのアクティブ状態を反転させる
+                    uiCanvas.SetActive(canvasActive); // Canvasのアクティブ状態に合わせてUIをアクティブ化または非アクティブ化する
                 }
             }
+        }
+        
+    }
+
+    public void DeactivateCanvas()
+    {
+        uiCanvas.SetActive(false);
+        canvasActive = false;
+    }
+
+    
+    private void CameraMovement()
+    {
+        if (CameraManager.Instance != null || CameraManager1.Instance != null || CameraManager2.Instance != null || CameraManager3.Instance != null) // どちらかが null でないことを確認
+        {
+            if (CameraManager.Instance != null) // CameraManager インスタンスが null でない場合
+            {
+                CameraManager.Instance.ChangeCameraPosition(OpenPositionName);
+            }
+            else if (CameraManager1.Instance != null)
+            {
+                CameraManager1.Instance.ChangeCameraPosition(OpenPositionName);
+            }
+            else if (CameraManager2.Instance != null)
+            {
+                CameraManager2.Instance.ChangeCameraPosition(OpenPositionName);
+            }
+            else
+            {
+                CameraManager3.Instance.ChangeCameraPosition(OpenPositionName);
+            }
+            colliderToTap.gameObject.SetActive(true);
         }
     }
 }

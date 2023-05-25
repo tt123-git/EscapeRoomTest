@@ -12,8 +12,6 @@ public class CameraManager : MonoBehaviour
     public GameObject ButtonLeft;
     public GameObject ButtonRight;
     public GameObject ButtonBack;
-    //public GameObject DoorRight;
-    //public GameObject DoorLeft;
 
     private class CameraPositionInfo //Camera position Info class
     {

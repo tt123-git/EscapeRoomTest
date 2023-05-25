@@ -52,9 +52,13 @@ public class OpenJudge : MonoBehaviour
             {
                 CameraManager2.Instance.ChangeCameraPosition(OpenPositionName);
             }
-            else
+            else if (CameraManager3.Instance != null)
             {
                 CameraManager3.Instance.ChangeCameraPosition(OpenPositionName);
+            }
+            else
+            {
+                CameraManager4.Instance.ChangeCameraPosition(OpenPositionName);
             }
             OpenCollider.SetActive(true);
         }

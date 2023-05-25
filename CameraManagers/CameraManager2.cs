@@ -37,7 +37,7 @@ public class CameraManager2 : MonoBehaviour
             new CameraPositionInfo
             {
                 Position2 = new Vector3(-2, 2, 2),
-                Rotate2 = new Vector3(0, 0, 0),
+                Rotate2 = new Vector3(5, 0, 0),
                 MoveNames2 = new MoveNames
                 {
                     Left2 = "RoomLeft2",
@@ -85,6 +85,18 @@ public class CameraManager2 : MonoBehaviour
                     Left2 = "RoomRight2",
                     Right2 = "RoomLeft2",
                     Back2 = "Door2",
+                }
+            }
+        },
+        {
+            "Food2",
+            new CameraPositionInfo
+            {
+                Position2 = new Vector3(-3, 2, 1),
+                Rotate2 = new Vector3(5, -90, 0),
+                MoveNames2 = new MoveNames
+                {
+                    Back2 = "RoomLeft2",
                 }
             }
         },

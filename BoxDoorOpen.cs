@@ -34,6 +34,10 @@ public class BoxDoorOpen : MonoBehaviour
         {
             gameObject.transform.localRotation = Quaternion.Euler(OpenRotate);
         }
+        else if (CameraManager5.Instance != null && OpenPositionName == CameraManager5.Instance.CurrentPositionName)
+        {
+            gameObject.transform.localRotation = Quaternion.Euler(OpenRotate);
+        }
         else
         {
             gameObject.transform.localRotation = Quaternion.identity;

@@ -82,6 +82,18 @@ public class CameraManager4 : MonoBehaviour
             }
         },
         {
+            "Mirror4",
+            new CameraPositionInfo
+            {
+                Position4 = new Vector3(-1, 2, -1),
+                Rotate4 = new Vector3(15, -90, 0),
+                MoveNames4 = new MoveNames
+                {
+                    Back4 = "Front4",
+                }
+            }
+        },
+        {
             "RoomLeft4",
             new CameraPositionInfo
             {
@@ -92,6 +104,42 @@ public class CameraManager4 : MonoBehaviour
                     Left4 = "RoomBack4",
                     Right4 = "Front4",
                     Back4 = "RoomRight4",
+                }
+            }
+        },
+        {
+            "Drawer42",
+            new CameraPositionInfo
+            {
+                Position4 = new Vector3(1, 1, -1),
+                Rotate4 = new Vector3(35, 180, 0),
+                MoveNames4 = new MoveNames
+                {
+                    Back4 = "RoomLeft4",
+                }
+            }
+        },
+        {
+            "Drawer42Open",
+            new CameraPositionInfo
+            {
+                Position4 = new Vector3(1, 1, -1),
+                Rotate4 = new Vector3(35, 180, 0),
+                MoveNames4 = new MoveNames
+                {
+                    Back4 = "Drawer42",
+                }
+            }
+        },
+        {
+            "Pillow4",
+            new CameraPositionInfo
+            {
+                Position4 = new Vector3(0, 2, -1),
+                Rotate4 = new Vector3(50, 180, 0),
+                MoveNames4 = new MoveNames
+                {
+                    Back4 = "RoomLeft4",
                 }
             }
         },
@@ -110,6 +158,30 @@ public class CameraManager4 : MonoBehaviour
             }
         },
         {
+            "Plate4",
+            new CameraPositionInfo
+            {
+                Position4 = new Vector3(1, 2, 1),
+                Rotate4 = new Vector3(20, -6, 0),
+                MoveNames4 = new MoveNames
+                {
+                    Back4 = "RoomRight4",
+                }
+            }
+        },
+        {
+            "TV4",
+            new CameraPositionInfo
+            {
+                Position4 = new Vector3(0, 2, 1),
+                Rotate4 = new Vector3(30, 0, 0),
+                MoveNames4 = new MoveNames
+                {
+                    Back4 = "RoomRight4",
+                }
+            }
+        },
+        {
             "RoomBack4",
             new CameraPositionInfo
             {
@@ -120,6 +192,18 @@ public class CameraManager4 : MonoBehaviour
                     Left4 = "RoomRight4",
                     Right4 = "RoomLeft4",
                     Back4 = "Front4",
+                }
+            }
+        },
+        {
+            "Box4",
+            new CameraPositionInfo
+            {
+                Position4 = new Vector3(1, 1, 1),
+                Rotate4 = new Vector3(25, 90, 0),
+                MoveNames4 = new MoveNames
+                {
+                    Back4 = "RoomBack4",
                 }
             }
         },

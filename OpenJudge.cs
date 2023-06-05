@@ -38,7 +38,8 @@ public class OpenJudge : MonoBehaviour
 
     private void CameraMovement()
     {
-        if (CameraManager.Instance != null || CameraManager1.Instance != null || CameraManager2.Instance != null || CameraManager3.Instance != null) // どちらかが null でないことを確認
+        if (CameraManager.Instance != null || CameraManager1.Instance != null || CameraManager2.Instance != null || CameraManager3.Instance != null || CameraManager4.Instance != null
+            || CameraManager5.Instance != null) // どちらかが null でないことを確認
         {
             if (CameraManager.Instance != null) // CameraManager インスタンスが null でない場合
             {
@@ -56,9 +57,13 @@ public class OpenJudge : MonoBehaviour
             {
                 CameraManager3.Instance.ChangeCameraPosition(OpenPositionName);
             }
-            else
+            else if (CameraManager4.Instance != null)
             {
                 CameraManager4.Instance.ChangeCameraPosition(OpenPositionName);
+            }
+            else
+            {
+                CameraManager5.Instance.ChangeCameraPosition(OpenPositionName);
             }
             OpenCollider.SetActive(true);
         }

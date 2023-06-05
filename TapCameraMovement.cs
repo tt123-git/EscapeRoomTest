@@ -28,6 +28,9 @@ public class TapCameraMovement : TapCollider
         {
             CameraManager4.Instance.ChangeCameraPosition(MovePositionName);
         }
-
+        else if (CameraManager5.Instance != null)
+        {
+            CameraManager5.Instance.ChangeCameraPosition(MovePositionName);
+        }
     }
 }

@@ -31,6 +31,8 @@ public class TapCollider : MonoBehaviour
             GetComponent<BoxCollider>().enabled = true;
         else if (CameraManager5.Instance != null && EnableCameraPositionName == CameraManager5.Instance.CurrentPositionName)
             GetComponent<BoxCollider>().enabled = true;
+        else if (CameraManager6.Instance != null && EnableCameraPositionName == CameraManager6.Instance.CurrentPositionName)
+            GetComponent<BoxCollider>().enabled = true;
         else
             GetComponent<BoxCollider>().enabled = false;
     }
